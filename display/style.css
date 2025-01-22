@@ -1,0 +1,129 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container {
+    margin-top: 30px;
+    max-width: 50vw;
+}
+h2 {
+    font-family: 'Segoe UI';
+    color: #ff760c;
+}
+.block {
+    display: block;
+}
+.inline {
+    display: inline;
+}
+.inline-block {
+    display: inline-block;
+    width: 60px;
+}
+.contants {
+    display: contents;
+    background-color: #333;
+}
+.flex {
+    display: flex;
+    flex-direction: column;
+
+}
+.inline-flex {
+    display: inline-flex;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 70px);
+}
+.inline-grid {
+    display: inline-grid;
+    grid-template-columns: repeat(4, 70px);
+}
+.list-item {
+    display: list-item;
+}
+.table {
+    display: table;
+}
+.linha {
+    display: table-row;
+}
+.celula {
+    display: table-cell;
+}
+.cabecalho {
+    display: table-header-group;
+}
+.cabecalho .celula {
+    font-weight: bold;
+    text-align: center;
+}
+.none {
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+   /* display: none;*/
+}
+
+.A{
+    background-color: red;
+}
+.B{
+    background-color: rosybrown;
+}
+.C{
+    background-color: yellow
+}
+.D{
+    background-color: aqua
+}
+.E{
+    background-color: beige
+}
+.F{
+    background-color: blue
+}
+.G{
+    background-color: bisque
+}
+.H{
+    background-color: brown
+}
+.J{
+    background-color: coral
+}
+.K{
+    background-color: cornflowerblue
+}
+.L{
+    background-color: chartreuse
+}
+.M{
+    background-color: chocolate
+}
+.N{
+    background-color: cyan
+}
+.O{
+    background-color: darkblue
+}
+.P{
+    background-color: darkgray
+}
+.Q{
+    background-color: darkkhaki
+}
+.R{
+    background-color: darkslategray
+}
+.S{
+    background-color: darkred
+}
+.T{
+    background-color: darkviolet
+}
+.U{
+    background-color: fuchsia
+}
