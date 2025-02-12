@@ -1,0 +1,17 @@
+body {
+    display: grid;
+    place-items: start end;
+    height: 100vh;
+}
+div {
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+}
+div:nth-child(3) {
+    justify-self: start;
+}
+div:nth-child(1) {
+    justify-self: baseline;
+}
