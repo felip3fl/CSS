@@ -51,16 +51,16 @@ Use o ``Visual Studio Code``  para usar este projeto
 
 ## ✔️ Técnicas e tecnologias utilizadas
 <p align="justify">
-<img width="90" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg">
-&nbsp;&nbsp;<img width="90"  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg">
+<img width="90" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg">
+&nbsp;&nbsp;<img width="90"  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg">
+&nbsp;&nbsp;<img width="90"  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg">
 &nbsp;&nbsp;<img width="90" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg">
-&nbsp;&nbsp;<img width="90"  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg">
 &nbsp;&nbsp;<img width="90" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg">
-&nbsp;&nbsp;<img width="90" src="https://user-images.githubusercontent.com/20684484/221180847-4c5efc03-adbd-4ec6-8764-903d68ac50b4.png">
+&nbsp;&nbsp;<img width="90" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/chrome/chrome-original.svg">
 </p>
 
-- ``Entity Framework Core 6``
-- ``Paradigma de orientação a objetos``
+- ``HTML5``
+- ``CSS3``
 
 <BR>
 
