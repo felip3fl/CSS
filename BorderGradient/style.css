@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    width: 90%;
+    height: 90vh;
+    box-shadow: 0 0 10px rgba(100, 100, 100, .2);
+    flex-flow: column wrap;
+}
+.container > div {
+    width: 150px;
+    height: 150px;
+    
+    
+    box-shadow: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    border-image: linear-gradient(to right, #ed008e 0%, #a90065 100%) 1;
+    border-bottom-width: 3px;
+    border-style: solid;
+    
+}
