@@ -1,0 +1,31 @@
+.container {
+    display: flex;   
+}
+.c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 900px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(103, 103, 103);
+}
+
+
+.d, .b{
+    flex-grow: 1;
+
+    color: rgb(255, 255, 255);
+    background-color: rgb(234, 234, 234);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.content{
+    border: 5px solid rgb(223, 0, 0);
+    height: 200px;
+    width: 100%;
+}
+
