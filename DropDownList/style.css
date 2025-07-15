@@ -1,0 +1,33 @@
+select,
+::picker(select) {
+  appearance: base-select;
+}
+
+select {
+  border: 2px solid #ddd;
+  background: #eee;
+  height: 100px;
+  width:  100px;
+  text-align: center;
+  transition: 0.4s;
+  
+}
+
+select:hover,
+select:focus {
+  background: #ddd;
+}
+
+select::picker-icon {
+  color: #741b1b;
+  transition: 0.4s rotate;
+}
+
+option:nth-of-type(odd) {
+  background: #fff;
+}
+
+option:hover,
+option:focus {
+  background: rgb(255, 184, 237);
+}
