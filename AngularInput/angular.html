@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material Design Input</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        /* Material Input Container */
+        .mat-form-field {
+            position: relative;
+            margin: 20px 0;
+            width: 100%;
+        }
+
+        /* Input Field */
+        .mat-input {
+            width: 100%;
+            padding: 12px 0 8px 0;
+            font-size: 16px;
+            border: none;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+            background: transparent;
+            outline: none;
+            transition: border-color 0.3s ease;
+            font-family: inherit;
+        }
+
+        /* Label */
+        .mat-label {
+            position: absolute;
+            left: 0;
+            top: 12px;
+            font-size: 16px;
+            color: rgba(0, 0, 0, 0.6);
+            pointer-events: none;
+            transition: all 0.3s ease;
+            transform-origin: left top;
+        }
+
+        /* Underline animation */
+        .mat-form-field::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #05e67d;
+            transition: width 0.3s ease;
+        }
+
+        /* Focus state */
+        .mat-input:focus {
+            border-bottom-color: #e2d303;
+        }
+
+        .mat-input:focus ~ .mat-label,
+        .mat-input:not(:placeholder-shown) ~ .mat-label {
+            top: -8px;
+            font-size: 12px;
+            color: #d5ec00;
+        }
+
+        .mat-input:focus ~ .mat-label {
+            color: #3f51b5;
+        }
+
+        .mat-form-field:focus-within::after {
+            width: 100%;
+        }
+
+        /* Hint text */
+        .mat-hint {
+            font-size: 12px;
+            color: rgba(0, 0, 0, 0.6);
+            margin-top: 4px;
+            display: block;
+        }
+
+        /* Error state */
+        .mat-form-field.mat-error .mat-input {
+            border-bottom-color: #f44336;
+        }
+
+        .mat-form-field.mat-error .mat-label {
+            color: #f44336;
+        }
+
+        .mat-form-field.mat-error::after {
+            background: #f44336;
+        }
+
+        .mat-form-field.mat-error .mat-input:focus ~ .mat-label {
+            color: #f44336;
+        }
+
+        .mat-error-message {
+            font-size: 12px;
+            color: #f44336;
+            margin-top: 4px;
+            display: none;
+        }
+
+        .mat-form-field.mat-error .mat-error-message {
+            display: block;
+        }
+
+        /* Disabled state */
+        .mat-input:disabled {
+            color: rgba(0, 0, 0, 0.38);
+            border-bottom-style: dotted;
+            cursor: not-allowed;
+        }
+
+        .mat-input:disabled ~ .mat-label {
+            color: rgba(0, 0, 0, 0.38);
+        }
+
+        /* Filled variant */
+        .mat-form-field.mat-filled {
+            background: rgba(0, 0, 0, 0.06);
+            border-radius: 4px 4px 0 0;
+            padding: 0 12px;
+        }
+
+        .mat-form-field.mat-filled .mat-input {
+            padding-top: 20px;
+        }
+
+        .mat-form-field.mat-filled .mat-label {
+            left: 12px;
+            top: 20px;
+        }
+
+        .mat-form-field.mat-filled .mat-input:focus ~ .mat-label,
+        .mat-form-field.mat-filled .mat-input:not(:placeholder-shown) ~ .mat-label {
+            top: 8px;
+        }
+
+        /* Outlined variant */
+        .mat-form-field.mat-outlined {
+            border: 1px solid rgba(0, 0, 0, 0.38);
+            border-radius: 4px;
+            padding: 0 12px;
+        }
+
+        .mat-form-field.mat-outlined .mat-input {
+            border: none;
+            padding: 16px 0 8px 0;
+        }
+
+        .mat-form-field.mat-outlined .mat-label {
+            left: 12px;
+            top: 16px;
+            background: white;
+            padding: 0 4px;
+        }
+
+        .mat-form-field.mat-outlined .mat-input:focus ~ .mat-label,
+        .mat-form-field.mat-outlined .mat-input:not(:placeholder-shown) ~ .mat-label {
+            top: -8px;
+            left: 8px;
+        }
+
+        .mat-form-field.mat-outlined::after {
+            display: none;
+        }
+
+        .mat-form-field.mat-outlined:focus-within {
+            border-color: #04aa28;
+            border-width: 2px;
+        }
+
+        .mat-form-field.mat-outlined.mat-error {
+            border-color: #f44336;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+
+        <div class="demo-section">
+            <h2>Filled</h2>
+            
+      
+
+            <div class="mat-form-field mat-filled">
+                <input type="email" class="mat-input" placeholder=" " id="filled-email">
+                <label class="mat-label" for="filled-email">E-mail</label>
+            </div>
+
+  
+        </div>
+
+        
+    </div>
+
+  
+</body>
+</html>

@@ -1,0 +1,80 @@
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: #f5f0e8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 300px;
+    }
+
+    h2 {
+      font-size: 14px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 12px;
+    }
+
+    .scroll-box {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      padding: 20px;
+      background: #fff;
+      border: 1px solid #e0d8cc;
+      border-radius: 4px;
+    }
+
+    .scroll-box::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .scroll-box::-webkit-scrollbar-track {
+      background: #f5f0e8;
+    }
+
+    .scroll-box::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 3px;
+    }
+
+    .card {
+      min-width: 140px;
+      height: 180px;
+      background: #f9f6f0;
+      border: 1px solid #e0d8cc;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .card-icon {
+      font-size: 28px;
+    }
+
+    .card-label {
+      font-size: 13px;
+      color: #555;
+      letter-spacing: 0.05em;
+    }
+
+    .hint {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #aaa;
+      text-align: right;
+    }

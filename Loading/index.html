@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animações de Carregamento Redondas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .loader-box {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            transition: transform 0.3s;
+            min-height: 180px;
+            justify-content: center;
+        }
+
+        .loader-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .loader-title {
+            font-size: 1.1em;
+            color: #333;
+            font-weight: 600;
+        }
+
+        /* Loader 1: Círculo com Bola Orbitando */
+        .orbit {
+            width: 60px;
+            height: 60px;
+            position: relative;
+        }
+
+        .orbit-circle {
+            width: 100%;
+            height: 100%;
+            border: 3px solid #e0e0e0;
+            border-radius: 50%;
+        }
+
+        .orbit-ball {
+            width: 12px;
+            height: 12px;
+            background: #667eea;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: orbit-anim 1.5s linear infinite;
+        }
+
+        @keyframes orbit-anim {
+            0% { transform: translateX(-50%) rotate(0deg) translateY(30px) rotate(0deg); }
+            100% { transform: translateX(-50%) rotate(360deg) translateY(30px) rotate(-360deg); }
+        }
+
+        /* Loader 2: Anel Crescente */
+        .growing-ring {
+            width: 60px;
+            height: 60px;
+            border: 4px solid #667eea;
+            border-radius: 50%;
+            animation: grow-ring 2s ease-in-out infinite;
+        }
+
+        @keyframes grow-ring {
+            0%, 100% { transform: scale(0.5); opacity: 0; }
+            50% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Loader 3: Múltiplos Anéis */
+        .multi-rings {
+            width: 60px;
+            height: 60px;
+            position: relative;
+        }
+
+        .multi-rings span {
+            position: absolute;
+            inset: 0;
+            border: 3px solid #667eea;
+            border-radius: 50%;
+            animation: multi-ring-anim 2s ease-in-out infinite;
+        }
+
+        .multi-rings span:nth-child(1) { animation-delay: 0s; }
+        .multi-rings span:nth-child(2) { animation-delay: 0.5s; }
+        .multi-rings span:nth-child(3) { animation-delay: 1s; }
+
+        @keyframes multi-ring-anim {
+            0% { transform: scale(0); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        /* Loader 4: Arco Rotativo */
+        .rotating-arc {
+            width: 60px;
+            height: 60px;
+            border: 4px solid transparent;
+            border-top-color: #667eea;
+            border-right-color: #667eea;
+            border-left-color: #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Loader 5: Círculo Pontilhado */
+        .dotted-circle {
+            width: 60px;
+            height: 60px;
+            border: 4px dotted #667eea;
+            border-radius: 50%;
+            animation: spin 2s linear infinite;
+        }
+
+        /* Loader 6: Bolas ao Redor */
+        .balls-around {
+            width: 60px;
+            height: 60px;
+            position: relative;
+        }
+
+        .ball {
+            width: 10px;
+            height: 10px;
+            background: #667eea;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            animation: fade-ball 1.2s ease-in-out infinite;
+        }
+
+        .ball:nth-child(1) { transform: translate(-50%, -50%) rotate(0deg) translateY(-25px); animation-delay: 0s; }
+        .ball:nth-child(2) { transform: translate(-50%, -50%) rotate(45deg) translateY(-25px); animation-delay: 0.15s; }
+        .ball:nth-child(3) { transform: translate(-50%, -50%) rotate(90deg) translateY(-25px); animation-delay: 0.3s; }
+        .ball:nth-child(4) { transform: translate(-50%, -50%) rotate(135deg) translateY(-25px); animation-delay: 0.45s; }
+        .ball:nth-child(5) { transform: translate(-50%, -50%) rotate(180deg) translateY(-25px); animation-delay: 0.6s; }
+        .ball:nth-child(6) { transform: translate(-50%, -50%) rotate(225deg) translateY(-25px); animation-delay: 0.75s; }
+        .ball:nth-child(7) { transform: translate(-50%, -50%) rotate(270deg) translateY(-25px); animation-delay: 0.9s; }
+        .ball:nth-child(8) { transform: translate(-50%, -50%) rotate(315deg) translateY(-25px); animation-delay: 1.05s; }
+
+        @keyframes fade-ball {
+            0%, 100% { opacity: 0.2; transform: translate(-50%, -50%) rotate(var(--angle, 0deg)) translateY(-25px) scale(0.8); }
+            50% { opacity: 1; transform: translate(-50%, -50%) rotate(var(--angle, 0deg)) translateY(-25px) scale(1); }
+        }
+
+        /* Loader 7: Círculo Dividido */
+        .split-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 4px solid #e0e0e0;
+            border-top-color: #667eea;
+            border-bottom-color: #764ba2;
+            animation: spin 1.2s linear infinite;
+        }
+
+        /* Loader 8: Anel com Sombra */
+        .shadow-ring {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 5px solid transparent;
+            border-top-color: #667eea;
+            animation: spin 1s linear infinite;
+            box-shadow: 0 0 15px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Loader 9: Círculos Concêntricos */
+        .concentric {
+            width: 60px;
+            height: 60px;
+            position: relative;
+        }
+
+        .concentric-ring {
+            position: absolute;
+            border: 3px solid #667eea;
+            border-radius: 50%;
+            animation: spin 2s linear infinite;
+        }
+
+        .concentric-ring:nth-child(1) { inset: 0; animation-duration: 1s; }
+        .concentric-ring:nth-child(2) { inset: 8px; animation-duration: 1.5s; animation-direction: reverse; }
+        .concentric-ring:nth-child(3) { inset: 16px; animation-duration: 2s; }
+
+        /* Loader 10: Círculo de Gradiente */
+        .gradient-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: conic-gradient(
+                #667eea 0deg,
+                #764ba2 90deg,
+                transparent 90deg,
+                transparent 360deg
+            );
+            animation: spin 1.5s linear infinite;
+        }
+
+        .gradient-circle::before {
+            content: '';
+            position: absolute;
+            inset: 5px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        /* Loader 11: Círculo Pulsante */
+        .pulse-circle {
+            width: 60px;
+            height: 60px;
+            background: #667eea;
+            border-radius: 50%;
+            animation: pulse-circ 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse-circ {
+            0%, 100% { transform: scale(0.8); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 1; }
+        }
+
+        /* Loader 12: Anel de Progresso Animado */
+        .progress-ring {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: conic-gradient(
+                #667eea 0deg,
+                #667eea var(--progress, 90deg),
+                #e0e0e0 var(--progress, 90deg),
+                #e0e0e0 360deg
+            );
+            animation: progress-anim 2s linear infinite;
+            position: relative;
+        }
+
+        .progress-ring::before {
+            content: '';
+            position: absolute;
+            inset: 5px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        @keyframes progress-anim {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Loader 13: Círculo com Rastro */
+        .trail-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 4px solid transparent;
+            border-top-color: #667eea;
+            animation: spin 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+            box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1);
+        }
+
+        /* Loader 14: Bola Girando em Círculo */
+        .spinning-ball {
+            width: 60px;
+            height: 60px;
+            position: relative;
+            animation: spin 2s linear infinite;
+        }
+
+        .spinning-ball::before {
+            content: '';
+            width: 15px;
+            height: 15px;
+            background: #667eea;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+        }
+
+        /* Loader 15: Círculo Neon */
+        .neon-circle {
+            width: 60px;
+            height: 60px;
+            border: 4px solid #667eea;
+            border-radius: 50%;
+            animation: neon-pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes neon-pulse {
+            0%, 100% {
+                box-shadow: 0 0 5px #667eea,
+                            0 0 10px #667eea,
+                            0 0 20px #667eea;
+            }
+            50% {
+                box-shadow: 0 0 10px #667eea,
+                            0 0 20px #667eea,
+                            0 0 40px #667eea,
+                            0 0 60px #667eea;
+            }
+        }
+
+        /* Loader 16: Círculo Segmentado */
+        .segmented-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: conic-gradient(
+                #667eea 0deg 60deg,
+                transparent 60deg 120deg,
+                #764ba2 120deg 180deg,
+                transparent 180deg 240deg,
+                #667eea 240deg 300deg,
+                transparent 300deg 360deg
+            );
+            animation: spin 1.5s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⭕ Animações de Carregamento Redondas</h1>
+        
+        <div class="grid">
+            <div class="loader-box">
+                <div class="orbit">
+                    <div class="orbit-circle"></div>
+                    <div class="orbit-ball"></div>
+                </div>
+                <div class="loader-title">Órbita Circular</div>
+            </div>
+
+            <div class="loader-box">
+                <div class="growing-ring"></div>
+                <div class="loader-title">Anel Crescente</div>
+            </div>
+
+            <div class="loader-box">
+                <div class="multi-rings">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="loader-title">Ondas Circulares</div>
+            </div>
+
+            <div class="loader-box">
+                <div class="rotating-arc"></div>
+                <div class="loader-title">Arco Rotativo</div>
+            </div>
+
+            <div class="loader-box">
+                <div class="dotted-circle"></div>
+                <div class="loader-title">Círculo Pontilhado</div>
+            </div>
+
+            <div class="loader-box">
+                <div class="balls-around">
+                    <div class="ball"></div>
+                    <div class="ball"></div>
+                    <div class="ball"></div>
+                    <div class="ball"></div>
+                    <div class="ball"></div>
+                    <div class="ball"></div>
+                    <div class="ball"></div>
+                    <div class="ball"></div>
+                </div>
+                <div class="loader-title">Bolas Pulsantes</div>
+            </div>
+
+            <div class="loader-box">
+                <div class="split-circle"></div>
+                <div class="loader-title">Círculo Bicolor</div>
+            </div>
+
+            <div class="loader-box">
+                <div class="shadow-ring"></div>
+                <div class="loader-title">Anel com Sombra</div>
+            </div>
+
+            <div class="loader-box">
+                <div class="concentric">
+                    <div class="concentric-ring"></div>
+                    <div class="concentric-ring"></div>
+                    <div class="concentric-ring"></div>
+                </div>
+                <div class="loader-title">Anéis Concêntricos</div>
+            </div>
+
+            <div class="loader-box">
+                <div class="gradient-circle"></div>
+                <div class="loader-title">Gradiente Rotativo</div>
+            </div>
+
+            <div class="loader-box">
+                <div class="pulse-circle"></div>
+                <div class="loader-title">Círculo Pulsante</div>
+            </div>
+
+            <div class="loader-box">
+                <div class="progress-ring"></div>
+                <div class="loader-title">Progresso Circular</div>
+            </div>
+
+            <div class="loader-box">
+                <div class="trail-circle"></div>
+                <div class="loader-title">Círculo com Rastro</div>
+            </div>
+
+            <div class="loader-box">
+                <div class="spinning-ball"></div>
+                <div class="loader-title">Bola Orbital</div>
+            </div>
+
+            <div class="loader-box">
+                <div class="neon-circle"></div>
+                <div class="loader-title">Círculo Neon</div>
+            </div>
+
+            <div class="loader-box">
+                <div class="segmented-circle"></div>
+                <div class="loader-title">Círculo Segmentado</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox Estilo Mobile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 25px;
+            color: #333;
+            font-size: 20px;
+        }
+
+        /* Estilo iOS/Android Toggle Switch */
+        .toggle-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .toggle-container:last-child {
+            border-bottom: none;
+        }
+
+        .toggle-label {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .toggle-title {
+            font-size: 16px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .toggle-description {
+            font-size: 13px;
+            color: #888;
+        }
+
+        /* Switch iOS Style */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 51px;
+            height: 31px;
+            flex-shrink: 0;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.3s;
+            border-radius: 31px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 27px;
+            width: 27px;
+            left: 2px;
+            bottom: 2px;
+            background-color: white;
+            transition: 0.3s;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        input:checked + .slider {
+            background-color: #34c759;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(20px);
+        }
+
+        input:disabled + .slider {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Switch Android/Material Style */
+        .switch.material .slider {
+            background-color: #bdbdbd;
+        }
+
+        .switch.material .slider:before {
+            height: 20px;
+            width: 20px;
+            left: 6px;
+            bottom: 5.5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .switch.material input:checked + .slider {
+            background-color: #90caf9;
+        }
+
+        .switch.material input:checked + .slider:before {
+            background-color: #2196f3;
+            transform: translateX(20px);
+        }
+
+        /* Variações de cores */
+        .switch.red input:checked + .slider {
+            background-color: #ff3b30;
+        }
+
+        .switch.blue input:checked + .slider {
+            background-color: #007aff;
+        }
+
+        .switch.purple input:checked + .slider {
+            background-color: #af52de;
+        }
+
+        .switch.orange input:checked + .slider {
+            background-color: #ff9500;
+        }
+
+        /* Switch pequeno */
+        .switch.small {
+            width: 40px;
+            height: 24px;
+        }
+
+        .switch.small .slider:before {
+            height: 20px;
+            width: 20px;
+            left: 2px;
+            bottom: 2px;
+        }
+
+        .switch.small input:checked + .slider:before {
+            transform: translateX(16px);
+        }
+
+        /* Switch grande */
+        .switch.large {
+            width: 62px;
+            height: 38px;
+        }
+
+        .switch.large .slider:before {
+            height: 34px;
+            width: 34px;
+        }
+
+        .switch.large input:checked + .slider:before {
+            transform: translateX(24px);
+        }
+
+        .section-title {
+            font-size: 14px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 25px 0 15px 0;
+            font-weight: 600;
+        }
+
+        .section-title:first-child {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Checkboxes Estilo Mobile</h2>
+
+        <div class="section-title">Estilo iOS (Padrão)</div>
+        
+        <div class="toggle-container">
+            <div class="toggle-label">
+                <span class="toggle-title">Notificações</span>
+                <span class="toggle-description">Receber alertas de novidades</span>
+            </div>
+            <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="toggle-container">
+            <div class="toggle-label">
+                <span class="toggle-title">Modo Escuro</span>
+                <span class="toggle-description">Ativar tema escuro</span>
+            </div>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="section-title">Estilo Android/Material</div>
+
+        <div class="toggle-container">
+            <div class="toggle-label">
+                <span class="toggle-title">Wi-Fi</span>
+                <span class="toggle-description">Conectar automaticamente</span>
+            </div>
+            <label class="switch material">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="toggle-container">
+            <div class="toggle-label">
+                <span class="toggle-title">Bluetooth</span>
+                <span class="toggle-description">Dispositivos próximos</span>
+            </div>
+            <label class="switch material">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="section-title">Cores Personalizadas</div>
+
+        <div class="toggle-container">
+            <div class="toggle-label">
+                <span class="toggle-title">Vermelho</span>
+            </div>
+            <label class="switch red">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="toggle-container">
+            <div class="toggle-label">
+                <span class="toggle-title">Azul</span>
+            </div>
+            <label class="switch blue">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="toggle-container">
+            <div class="toggle-label">
+                <span class="toggle-title">Roxo</span>
+            </div>
+            <label class="switch purple">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="toggle-container">
+            <div class="toggle-label">
+                <span class="toggle-title">Laranja</span>
+            </div>
+            <label class="switch orange">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="section-title">Tamanhos</div>
+
+        <div class="toggle-container">
+            <div class="toggle-label">
+                <span class="toggle-title">Pequeno</span>
+            </div>
+            <label class="switch small">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="toggle-container">
+            <div class="toggle-label">
+                <span class="toggle-title">Normal</span>
+            </div>
+            <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="toggle-container">
+            <div class="toggle-label">
+                <span class="toggle-title">Grande</span>
+            </div>
+            <label class="switch large">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="section-title">Desabilitado</div>
+
+        <div class="toggle-container">
+            <div class="toggle-label">
+                <span class="toggle-title">Opção bloqueada</span>
+                <span class="toggle-description">Requer permissão do administrador</span>
+            </div>
+            <label class="switch">
+                <input type="checkbox" disabled>
+                <span class="slider"></span>
+            </label>
+        </div>
+    </div>
+</body>
+</html>
