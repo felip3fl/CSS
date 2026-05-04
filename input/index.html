@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conteúdo Flex</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="normal">
+    
+  </header>
+  <main>
+
+    <div class="grid">
+
+      <div class="card">
+        <p class="section-title">Texto &amp; entrada livre</p>
+        <div class="field"><label>text <span class="badge">type="text"</span></label>
+          <input type="text" placeholder="Digite aqui..."></div>
+        <div class="field"><label>password <span class="badge">type="password"</span></label>
+          <input type="password" placeholder="••••••••"></div>
+        <div class="field"><label>email <span class="badge">type="email"</span></label>
+          <input type="email" placeholder="nome@exemplo.com"></div>
+        <div class="field"><label>url <span class="badge">type="url"</span></label>
+          <input type="url" placeholder="https://"></div>
+        <div class="field"><label>tel <span class="badge">type="tel"</span></label>
+          <input type="tel" placeholder="+55 (11) 00000-0000"></div>
+        <div class="field"><label>search <span class="badge">type="search"</span></label>
+          <input type="search" placeholder="Buscar..."></div>
+      </div>
+
+      <div class="card">
+        <p class="section-title">Numérico &amp; intervalo</p>
+        <div class="field"><label>number <span class="badge">type="number"</span></label>
+          <input type="number" value="42" min="0" max="100"></div>
+        <div class="field"><label>range <span class="badge">type="range"</span></label>
+          <input type="range" min="0" max="100" value="60" style="width:100%"></div>
+      </div>
+
+      <div class="card">
+        <p class="section-title">Data &amp; hora</p>
+        <div class="field"><label>date <span class="badge">type="date"</span></label>
+          <input type="date"></div>
+        <div class="field"><label>time <span class="badge">type="time"</span></label>
+          <input type="time"></div>
+        <div class="field"><label>datetime-local <span class="badge">type="datetime-local"</span></label>
+          <input type="datetime-local"></div>
+        <div class="field"><label>month <span class="badge">type="month"</span></label>
+          <input type="month"></div>
+        <div class="field"><label>week <span class="badge">type="week"</span></label>
+          <input type="week"></div>
+      </div>
+
+      <div class="card">
+        <p class="section-title">Seleção &amp; escolha</p>
+        <div class="field">
+          <label>checkbox <span class="badge">type="checkbox"</span></label>
+          <div style="display:flex;flex-direction:column;gap:6px;margin-top:4px">
+            <label
+              style="display:flex;align-items:center;gap:8px;margin:0;font-size:14px;color:var(--color-text-primary)"><input
+                type="checkbox" checked> Opção A</label>
+            <label
+              style="display:flex;align-items:center;gap:8px;margin:0;font-size:14px;color:var(--color-text-primary)"><input
+                type="checkbox"> Opção B</label>
+          </div>
+        </div>
+        <div class="field">
+          <label>radio <span class="badge">type="radio"</span></label>
+          <div style="display:flex;flex-direction:column;gap:6px;margin-top:4px">
+            <label
+              style="display:flex;align-items:center;gap:8px;margin:0;font-size:14px;color:var(--color-text-primary)"><input
+                type="radio" name="r1" checked> Sim</label>
+            <label
+              style="display:flex;align-items:center;gap:8px;margin:0;font-size:14px;color:var(--color-text-primary)"><input
+                type="radio" name="r1"> Não</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="section-title">Arquivo &amp; cor</p>
+        <div class="field"><label>file <span class="badge">type="file"</span></label>
+          <input type="file"></div>
+        <div class="field"><label>color <span class="badge">type="color"</span></label>
+          <input type="color" value="#1D9E75" style="width:60px;height:36px;padding:2px;cursor:pointer"></div>
+      </div>
+
+      <div class="card">
+        <p class="section-title">Ações &amp; formulário</p>
+        <div class="field"><label>button <span class="badge">type="button"</span></label>
+          <input type="button" value="Clique aqui"></div>
+        <div class="field"><label>submit <span class="badge">type="submit"</span></label>
+          <input type="submit" value="Enviar formulário"></div>
+        <div class="field"><label>reset <span class="badge">type="reset"</span></label>
+          <input type="reset" value="Limpar campos"></div>
+        <div class="field"><label>image <span class="badge">type="image"</span></label>
+          <input type="image" src="https://placehold.co/120x32/1D9E75/fff?text=Enviar" alt="Botão enviar" style="border-radius:4px"></div>
+        <div class="field"><label>hidden <span class="badge">type="hidden"</span></label><span
+            style="font-size:13px;color:var(--color-text-tertiary);font-style:italic">Não renderiza nada visível —
+            apenas armazena dados no formulário.</span><input type="hidden" name="token" value="abc123"></div>
+      </div>
+
+    </div>
+
+
+  </main>
+</body>
+
+</html>
